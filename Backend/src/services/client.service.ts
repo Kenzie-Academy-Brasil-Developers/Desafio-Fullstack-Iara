@@ -5,24 +5,30 @@ import { repoClient } from "../repositories";
 import { clientReturnListSchema, clientReturnSchema, clientSchemaTotalResponse } from "../schemas/client.schema";
 
 export const createClientService = async(data: ClientCreate): Promise<ClientReturn> => {
-    const client: Client = repoClient.create(data);
+    const { email, full_name, password, tel } = data;
+
+    const client: Client = repoClient.create({email, full_name, password, tel});
 
     await repoClient.save(client);
+
     return clientReturnSchema.parse(client)
 
 }
 
 export const readAllClientService = async(): Promise<ClientReadReturn> => {
-    const clients: Client[] = await repoClient.find();
+    const clients: Array<Client> = await repoClient.find({
+        relations: ["contacts"]
+    });
+    console.log(clients);
     return clientReturnListSchema.parse(clients);
 }
 
 export const readClientByIdService = async(id: number): Promise<ClientResponse> => {
-    const client: Client[] | null = await repoClient.find({
+    const client: Client | null = await repoClient.findOne({
         where: { id: id },
         relations: { contacts: true},
     });
-    return clientSchemaTotalResponse.parse(client[0]);
+    return clientSchemaTotalResponse.parse(client);
 }
 
 export const updateClientService = async(data: ClientUpdate, id: number): Promise<ClientReturn> => {

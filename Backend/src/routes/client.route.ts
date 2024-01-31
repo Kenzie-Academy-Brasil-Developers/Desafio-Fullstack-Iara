@@ -15,19 +15,17 @@ clientRouter.post("/",
 
 clientRouter.use(verifyToken)
 
-clientRouter.get("/", readAllClientController);
+// clientRouter.get("/", readAllClientController);
 
-clientRouter.get("/:id", clientValidation, readClientByIdController );
+clientRouter.get("/:id",  readClientByIdController );
 
 clientRouter.patch("/:id", 
     validateBody(clientUpdateSchema),
-    clientValidation,
     verifyPermissions, 
     updateClientController
     );
 
 clientRouter.delete("/:id", 
-    clientValidation, 
     verifyPermissions, 
     deleteClientController
     );

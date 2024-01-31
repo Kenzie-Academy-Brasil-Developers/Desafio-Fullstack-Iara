@@ -5,6 +5,6 @@ import { RepoClient } from "./interfaces/client.interface";
 import { RepoContact } from "./interfaces/contact.interface";
 
 
-export const repoClient: RepoClient  = AppDataSource.getRepository(Client)
+export const repoClient = AppDataSource.getRepository(Client)
 
-export const repoContact: RepoContact  = AppDataSource.getRepository(Contact)
+export const repoContact = AppDataSource.getRepository(Contact)

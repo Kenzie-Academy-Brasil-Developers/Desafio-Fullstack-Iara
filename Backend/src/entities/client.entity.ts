@@ -26,8 +26,8 @@ export class Client {
     @Column({type: "varchar", length: 120})
     password: string;
 
-    @Column({type: "int", nullable: false })
-    tel: number;
+    @Column({type: "varchar", nullable: true })
+    tel: string;
 
     @CreateDateColumn({ type: 'date' })
     createdAt: string;

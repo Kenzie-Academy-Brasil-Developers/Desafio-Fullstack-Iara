@@ -4,7 +4,8 @@ import {
     Column,
     CreateDateColumn,
     UpdateDateColumn,                 
-    ManyToOne
+    ManyToOne,
+    JoinColumn
 } from "typeorm";
 import { Client } from "./client.entity";
 
@@ -19,8 +20,8 @@ export class Contact {
     @Column({type: "varchar", length: 200 })
     email: string;
 
-    @Column({ type: "int", nullable: false  })
-    tel: number;
+    @Column({ type: "varchar", nullable: true  })
+    tel: string;
 
     @CreateDateColumn({ type: 'date' })
     createdAt: string;
@@ -28,6 +29,7 @@ export class Contact {
     @UpdateDateColumn({ type: 'date' })
     updatedAt: string;
 
-    @ManyToOne(() => Client , { onDelete: 'CASCADE'})
+    @ManyToOne(() => Client, (client) => client.contacts)
+    @JoinColumn({ name: "clients_id"})
     clients: Client;
 }

@@ -10,14 +10,13 @@ import { contactValidation } from "../middlewares/contactValidate.middleware";
 export const contactRouter = Router();
 
 
-contactRouter.use(verifyToken);
-contactRouter.post("",validateBody(contactCreateSchema), createContactController);
-contactRouter.get("", readAllContactController);
+// contactRouter.use(verifyToken);
+contactRouter.post("",verifyToken, validateBody(contactCreateSchema), createContactController);
+contactRouter.get("",verifyToken, readAllContactController);
 
 
-// contactRouter.use("/:id", contactValidation);
-contactRouter.get("/:id",contactValidation, readContactByIdController);
-contactRouter.patch("/:id", validateBody(contactUpdateSchema), contactValidation
+contactRouter.get("/:id", verifyToken, contactValidation, readContactByIdController);
+contactRouter.patch("/:id",verifyToken, validateBody(contactUpdateSchema), contactValidation
 , updateContactController );
-contactRouter.delete("/:id", contactValidation, deleteContactController);
+contactRouter.delete("/:id",verifyToken, contactValidation, deleteContactController);
 

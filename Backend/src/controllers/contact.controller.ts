@@ -2,15 +2,16 @@ import { Request, Response } from "express";
 import { createContactService, deleteContactService, readAllContactService, readContactByIdService, updateContactService } from "../services/contact.service";
 import { ContactUpdate } from "../interfaces/contact.interface";
 
+
 export const createContactController = async(req: Request, res: Response) => {
-    const id: number = res.locals.id;
-    const contact = await createContactService(req.body, id);
+    const clientId: number = res.locals.clientId;
+    const contact = await createContactService(req.body, clientId);
 
     return res.status(201).json(contact);
 };
 
 export const readAllContactController = async(req: Request, res: Response) => {
-    const contacts = await readAllContactService();
+    const contacts = await readAllContactService(res.locals.clientId);
     
     return res.json(contacts);
 }
