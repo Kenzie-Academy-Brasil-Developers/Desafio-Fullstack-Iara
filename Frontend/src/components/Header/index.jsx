@@ -7,10 +7,10 @@ export const Header = () => {
     return(
         <header>
             <div>
-            Header
+            Header 
                 <div>
                     <p>
-                        {user && user.full_name ? `Bem vindo(a), ${user.full_name}` : 'Usuario nao autenticado'}
+                        {user && user.full_name ? `Seja bem vindo(a) ${user.full_name}` : null}
                     </p>
                 </div>
                 <button onClick={userLogout}>Sair</button>
