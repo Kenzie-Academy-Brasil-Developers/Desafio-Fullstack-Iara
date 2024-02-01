@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "build": "tsc",
-    "start": "ts-node dist/server.ts",
-    "dev": "ts-node-dev --rs --cls --ignore-watch node_modules src/server.ts",
-    "typeorm": "npx typeorm-ts-node-esm migration:generate src/migrations/InitialMigration -d src/data-source"
+    "start": "ts-node dist/server.ts"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.6",
