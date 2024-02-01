@@ -4,7 +4,7 @@
   "scripts": {
     "start":"ts-node src/server.ts",
     "dev": "ts-node-dev --rs --cls --ignore-watch node_modules src/server.ts",
-    "typeorm": "typeorm migration:generate src/migrations/InitialMigration -- -d src/data-source"
+    "typeorm": "typeorm migration:generate src/migrations/InitialMigration -- -d ./src/data-source"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.6",
