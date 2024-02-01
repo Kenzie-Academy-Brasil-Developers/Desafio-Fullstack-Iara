@@ -8,9 +8,8 @@ import { handleErrors } from './middlewares/handleError.middleware';
 
 const app: Application = express();
 
-// Configurar CORS antes de suas rotas
 const corsOptions = {
-    origin: 'http://localhost:5173',
+    origin:  ["http://localhost:5173" , "https://frontend-h4k2zcp0y-iaraassis.vercel.app"],
     credentials: true,
 };
 app.use(cors(corsOptions));
