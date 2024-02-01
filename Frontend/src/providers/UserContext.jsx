@@ -63,7 +63,7 @@ export const UserProvider = ({children}) => {
         try {
             setLoading(true);
             await api.post("/clients/", formData);
-            navigate("/login");
+            navigate("/");
             toast.success("Registration completed successfully!");
         } catch (error) {
             console.log(error);
@@ -77,11 +77,11 @@ export const UserProvider = ({children}) => {
 
     const userLogout = () => {
         setUser(null);
-        navigate("/login");
+        navigate("/");
         localStorage.removeItem("@TOKEN");
         localStorage.removeItem("@USERID");
         toast.warning("Logging out...");
-    }
+    };
 
     return(
         <UserContext.Provider value={{ user, userLogin, loading, userRegister, userLogout}}>

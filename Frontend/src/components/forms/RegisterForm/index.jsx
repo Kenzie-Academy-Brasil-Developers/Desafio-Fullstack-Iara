@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form"
-import { Link, useNavigate} from "react-router-dom";
+import { Link} from "react-router-dom";
 import { Input } from "../Input";
 import { zodResolver } from "@hookform/resolvers/zod"
 import { registerFormSchema } from "./registerFormSchema";
@@ -11,9 +11,8 @@ export const RegisterForm = () => {
     const { 
         register, 
         handleSubmit,
-        formState: {errors, isValid, isDirty},
+        formState: {errors},
     } = useForm({
-        mode: "onChange",
         resolver: zodResolver(registerFormSchema),
     });
 
@@ -64,8 +63,8 @@ export const RegisterForm = () => {
                 disabled={loading}
             />
             <div>
-                <Link className="link" to="/login">Back Login</Link>
-                <button className="btn" type="submit" disabled={!isValid || !isDirty}>
+                <Link className="link" to="/">Back Login</Link>
+                <button className="btn" type="submit" disabled={loading}>
                     {loading ? "Signing up..." : "Register"}
                 </button>
             </div>

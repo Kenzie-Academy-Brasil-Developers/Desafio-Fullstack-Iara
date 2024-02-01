@@ -2,8 +2,9 @@ import { useContext } from "react";
 import { ContactContext } from "../../providers/ContactContext";
 import { MdArrowBack } from "react-icons/md";
 import { Navigate, useNavigate } from "react-router-dom";
-import { DefaultTemplate } from "../../components/DefaultTemplate";
 import { EditContactForm } from "../../components/forms/EditContactForm";
+import styles from "./style.module.scss";
+import pageStyles from "../../styles/modules/pageBox.module.scss";
 
 export const EditContactPage = () => {
     const { editingContact , setEditingContact} = useContext(ContactContext);
@@ -11,9 +12,9 @@ export const EditContactPage = () => {
     const navigate = useNavigate();
 
     return editingContact ? ( 
-        <DefaultTemplate>
-            <main>
-                <div className="container">
+        <main className={pageStyles.pageBox}>
+            <div className="container sm">
+                <div className={styles.flexBox}>
                     <button  
                         onClick={() => {
                             setEditingContact(null);
@@ -22,12 +23,13 @@ export const EditContactPage = () => {
                         className="link" 
                         to="/contacts"  
                     >
-                        <MdArrowBack/> Voltar
+                        <MdArrowBack/>Back
                     </button>
-                    <h1 className="title center">Altere um contato</h1>
+                    <h1 className="label">Change a contat</h1>
                     <EditContactForm/>
                 </div>
-            </main>
-        </DefaultTemplate>
+            </div>
+        </main>
     ) : (<Navigate to="/contacts"/>) 
 };
+

@@ -7,7 +7,7 @@ import { Loading } from "./components/Loading";
 import "./styles/index.scss";
 
 
-function App() {
+function App({ toggleTheme, isDarkMode }) {
     const { loading } = useContext(UserContext);
   return (
     <>

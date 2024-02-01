@@ -7,5 +7,5 @@ import { ContactProvider } from "../../providers/ContactContext";
 export const PrivateRoutes = ( ) => {
     const { user } = useContext(UserContext);
 
-    return user ? <ContactProvider><Outlet/></ContactProvider> : <Navigate to="/login"/>
-}
+    return user ? <ContactProvider><Outlet/></ContactProvider> : <Navigate to="/"/>
+};

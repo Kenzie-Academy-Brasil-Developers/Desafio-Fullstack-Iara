@@ -1,19 +1,22 @@
 .flexBox{
+    width: 100%;
     display: flex;
     align-items: center;
-    justify-content:flex-start;
+    justify-content:center;
     flex-wrap: wrap;
     gap: 1.5rem;
     margin-top: 20px;
+    border-bottom: 3px solid transparent;
+    border-image: linear-gradient(to right, #af40ff, #5b42f3 50%,#00ddeb ) ;
+    border-image-slice: 1;
     
-
-
     & > div{
-        min-width: clamp(0px, 100%, 450px);
+        min-width: clamp(0px, 100%, 250px);
         display: flex;
         align-items: center;
         flex-direction: column;
         gap: 1rem;
+        margin-bottom: 50px;
 
     }
 
@@ -26,3 +29,5 @@
         }
     }
 }
+
+

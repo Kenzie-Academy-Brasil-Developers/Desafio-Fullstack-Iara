@@ -18,32 +18,34 @@ export const CreateContactForm = () => {
     return(
         <form onSubmit={handleSubmit(submit)}>
             <Input
-                label="Digite nome e sobre nome"
                 type="text" 
-                placeholder="Nome do contato"
+                placeholder="Username"
                 {...register("full_name")}
                 error={errors.full_name}
                 disabled={loading}
             />
             <Input 
-                label="Digite o e-mail" 
                 type="email" 
-                placeholder="Digite o e-mail" 
+                placeholder="E-mail" 
                 {...register("email")}
                 error={errors.email}
                 disabled={loading}
             />
             <Input 
-                label="Digite o telefone" 
                 type="text" 
-                placeholder="Digite o telefone"  
+                placeholder="Telephone"  
                 {...register("tel")} 
                 error={errors.tel}
                 disabled={loading}
             />
-            
-            <button className="btn solid" type="submit" disabled={!isValid || !isDirty}>{loading ? "Salvando..." : "Salvar"}</button>
-
+            <button 
+                className="btn" 
+                type="submit" 
+                disabled={!isValid || !isDirty}>
+                    {loading ? "Salvando..." : "Salvar"}
+            </button>
         </form>
-    )
-}
+    );
+};
+
+            

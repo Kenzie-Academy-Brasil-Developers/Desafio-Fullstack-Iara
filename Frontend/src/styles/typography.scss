@@ -1,5 +1,5 @@
 .label{
-    font-size: 10px;
+    font-size: 20px;
     letter-spacing: 3px;
     font-weight: 700;
     text-shadow: -2px -2px 3px #ffffff ,2px 2px 3px #bababa;
@@ -16,6 +16,7 @@
     color: transparent;
     display: inline-block;
     font-weight: bold;
+    margin: 0;
     font-family: var(--font-primary);
 }
 

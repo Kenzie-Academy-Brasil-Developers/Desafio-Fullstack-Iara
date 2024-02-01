@@ -14,7 +14,7 @@ export const RoutesMain = () => {
         <Routes>
             {/*Rotas de acesso somente para usuarios deslogados*/}
             <Route element={<PublicRoutes/>}>
-                <Route path="/login" element={<HomePage/>} /> 
+                <Route path="/" element={<HomePage/>} /> 
                 <Route path="/clients" element={<RegisterPage/>} /> 
             </Route>
             {/*Rotas de acesso somente para usuarios logados*/}

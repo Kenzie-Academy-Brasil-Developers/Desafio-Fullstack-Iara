@@ -52,7 +52,7 @@ export const ContactProvider = ({children}) => {
         } catch (error) {
             console.error(error)
         }
-    }
+    };
 
     const deleteContact = async(deletingId) => {
         try {
@@ -99,4 +99,4 @@ export const ContactProvider = ({children}) => {
             {children}
         </ContactContext.Provider>
     )
-}
+};
