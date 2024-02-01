@@ -1,0 +1,40 @@
+%buttonDefaults{
+    letter-spacing: 3px;
+    color: white;
+    font-weight: 600;
+    background: linear-gradient(144deg,#af40ff, #5b42f3 50%,#00ddeb);
+    border: none;
+    box-shadow: inset 1px 3px 3px #ffffffbd,inset -4px -4px 3px #00000046;
+    animation: input 5s infinite;
+    transition: all 900ms ease-in;
+    font-family: var(--font-primary);
+
+    &:hover{
+        position: relative;
+        bottom: 3px;
+        background: linear-gradient(144deg,#9706ff,#2f0fff 50%,#18f0ff);
+    }
+}
+
+.btn{
+    @extend %buttonDefaults;
+    font-size: large;
+    border-radius: 8px;
+    padding: 7px;
+}
+
+.btnSmall {
+    @extend %buttonDefaults;
+    font-size: large;
+    border-radius: 50px;
+    padding: 10px
+}
+
+
+.link{
+    @extend %buttonDefaults;
+    font-size: large;
+    border-radius: 8px;
+    padding: 7px;
+}
+

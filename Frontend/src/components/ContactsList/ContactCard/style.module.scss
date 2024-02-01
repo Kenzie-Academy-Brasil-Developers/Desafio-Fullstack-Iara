@@ -1,0 +1,18 @@
+.contactCard{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 30px 0;
+    border-bottom: 2px solid transparent;
+    border-image: linear-gradient(to right, #af40ff, #5b42f3 50%,#00ddeb ) ;
+    border-image-slice: 1;
+    
+    & > div:first-child{
+        width: clamp(0px, 100%, 400px);
+    }
+    p{
+        text-align:justify;
+    }
+}

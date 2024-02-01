@@ -1,10 +1,11 @@
 import { ToastContainer } from "react-toastify"
-import { DefaultTemplate } from "./components/DefaultTemplate"
 import { RoutesMain } from "./routes"
 import 'react-toastify/dist/ReactToastify.css';
 import { useContext } from "react";
 import { UserContext } from "./providers/UserContext";
 import { Loading } from "./components/Loading";
+import "./styles/index.scss";
+
 
 function App() {
     const { loading } = useContext(UserContext);

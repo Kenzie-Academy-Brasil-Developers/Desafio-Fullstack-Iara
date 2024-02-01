@@ -1,0 +1,12 @@
+.footer{
+    padding: 1.5rem 0;
+    background:  linear-gradient(144deg,#af40ffb8, #5b42f3 50%,#00ddeb); 
+
+    .flexBox{
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+}

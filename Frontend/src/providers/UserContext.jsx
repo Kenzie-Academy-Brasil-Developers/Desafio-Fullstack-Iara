@@ -29,12 +29,14 @@ export const UserProvider = ({children}) => {
                 setUser(data);
                 navigate(pathname)
             } catch (error) {
-                console.log(error.response?.data || error.message);                
+                console.log(error);                
             }finally{
                 setLoading(false);
             }
         }
-        getUser();
+        if(token && userId){
+            getUser();
+        }
     }, []);
 
     const userLogin = async (formData, setLoading, reset) => {
@@ -48,8 +50,8 @@ export const UserProvider = ({children}) => {
             navigate("/contacts");
         } catch (error) {
             console.log(error);
-            if(error.response?.data === "Invalid credentials"){
-                toast.error("Senha errada!")
+            if(error.response?.data === "Incorrect password"){
+                toast.error("Wrong password!")
             }
         }finally{
             setLoading(false);
@@ -60,13 +62,13 @@ export const UserProvider = ({children}) => {
     const userRegister = async (formData, setLoading ) => {
         try {
             setLoading(true);
-            await api.post("/clients/", formData)
-            navigate("/login")
-            toast.success('Cadastro realizado com sucesso!');
+            await api.post("/clients/", formData);
+            navigate("/login");
+            toast.success("Registration completed successfully!");
         } catch (error) {
             console.log(error);
-            if(error.response?.data === 'Email ja existe'){
-                toast.error('Usuario ja cadastrado')
+            if(error.response?.data === "Email already exists!"){
+                toast.error("User already registered!")
             }
         }finally{
             setLoading(false);
@@ -76,9 +78,9 @@ export const UserProvider = ({children}) => {
     const userLogout = () => {
         setUser(null);
         navigate("/login");
-        localStorage.removeItem("@USERID");
         localStorage.removeItem("@TOKEN");
-        toast.warning("Deslogando...");
+        localStorage.removeItem("@USERID");
+        toast.warning("Logging out...");
     }
 
     return(

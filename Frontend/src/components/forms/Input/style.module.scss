@@ -1,0 +1,32 @@
+.inputBox{
+    input {
+        width: 100%;
+        border: none;
+        letter-spacing: 2px;
+        border-radius: 8px;
+        font-size: 1.25rem;
+        font-weight: 400;
+        color: var(--color-black);
+        padding: 1px 20px;
+        box-shadow: inset -2px -2px 4px #ffffff, inset 2px 2px 4px rgba(0, 0, 0, 0.356);
+        background-size: 200% 200%;
+        background: linear-gradient(to right,white, #80808010, white);
+        text-decoration: none;
+        animation: input 4s infinite;
+        height: 3.5rem;
+
+
+        &:focus-visible{
+            outline: none;
+            background: rgb(241, 241, 241);
+        }
+
+    }
+    p{
+        margin-top: .5rem;
+        color: #5b42f3;
+        
+    }
+}
+
+

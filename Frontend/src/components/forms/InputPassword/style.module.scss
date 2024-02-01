@@ -1,0 +1,41 @@
+.inputBox{
+    .inputGrid{
+        position: relative;
+    }
+    input {
+        // margin-top: 9.6px;
+        width: 100%;
+        letter-spacing: 2px;
+        border-radius: 8px;
+        font-size: 1.25rem;
+        font-weight: 400;
+        color: var(--color-black);
+        padding: 0 20px;
+        height: 16%;
+        box-shadow: inset -2px -2px 4px #ffffff,
+                inset 2px 2px 4px rgba(0, 0, 0, 0.356);
+        height: 3.5rem;
+        background-size: 200% 200%;
+        background: linear-gradient(to right,white, #80808010, white); 
+        text-decoration: none;
+        animation: input 4s infinite; 
+        
+        &:focus-visible{
+            outline: none;
+            background: rgb(241, 241, 241);
+        }
+    }
+
+    button{
+        position: absolute;
+        top: 20px; 
+        right: 10px;
+        font-size: 1.5rem;
+    }
+
+    p{
+        margin-top: .5rem;
+        color: #5b42f3;
+    }
+
+}

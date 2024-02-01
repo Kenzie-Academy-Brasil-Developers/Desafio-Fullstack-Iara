@@ -1,0 +1,47 @@
+.label{
+    font-size: 10px;
+    letter-spacing: 3px;
+    font-weight: 700;
+    text-shadow: -2px -2px 3px #ffffff ,2px 2px 3px #bababa;
+    position: relative;
+    top: -15px;
+    font-family: var(--font-primary);
+}
+
+.logo{
+    background: linear-gradient(144deg,#af40ff, #5b42f3 50%,#00ddeb);
+    background-clip: text;
+    font-size: x-large;
+    letter-spacing: 7px;
+    color: transparent;
+    display: inline-block;
+    font-weight: bold;
+    font-family: var(--font-primary);
+}
+
+.title{
+    font-family: var(--font-primary);
+    font-size: clamp(24px, 5vw ,34px);
+    font-weight: 800;
+    color: var(--color-black);
+
+    &.center{
+        text-align: center;
+    }
+}
+
+.paragraph{
+    font-family: var(--font-primary);
+    font-size: 1.125rem;
+    font-weight: 400;
+    color: var(--color-black);
+
+    &.bold{
+        font-weight: 800;
+    }
+
+    &.white{
+        color: var(--color-white);
+    }
+}
+

@@ -28,24 +28,24 @@ export const LoginForm = () => {
     return(
         <form onSubmit={handleSubmit(submit)}>
             <Input 
-                label="Seu e-mail" 
+                label="Login" 
                 type="email" 
-                placeholder="Digite seu e-mail" 
+                placeholder="E-mail" 
                 {...register("email")}
                 error={errors.email}
                 disabled={loading}
             />
             <InputPassword
-                label="Digite a senha"
                 {...register("password")}
+                placeholder="PassWord" 
                 error={errors.password}
                 disabled={loading}
             />
             <div>
-                <Link to="/clients" disabled={loading}>Cadastre-se</Link>
-                <button type="submit" disabled={loading}>
-                    {loading ? "Acessando..." : "Acessar contatos"}</button>
+                <Link className="link" to="/clients" disabled={loading}>Register</Link>
+                <button className="btn" type="submit" disabled={loading}>
+                    {loading ? "Sending..." : "Submit"}</button>
             </div>
         </form>
-    )
-}
+    );
+};
