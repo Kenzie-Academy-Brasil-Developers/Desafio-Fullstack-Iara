@@ -9,7 +9,7 @@ import { handleErrors } from './middlewares/handleError.middleware';
 const app: Application = express();
 
 const corsOptions = {
-    origin:  ["http://localhost:5173" , "frontend-omega-rouge.vercel.app"],
+    origin:  ["http://localhost:5173" , "https://frontend-omega-rouge.vercel.app"],
     credentials: true,
 };
 app.use(cors(corsOptions));
