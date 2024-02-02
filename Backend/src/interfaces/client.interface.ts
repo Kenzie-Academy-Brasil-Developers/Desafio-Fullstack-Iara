@@ -5,7 +5,6 @@ import { clientCreateSchema, clientReadSchema, clientReturnSchema, clientSchema 
 import { Client } from "../entities/client.entity";
 
 
-
 export type TClient = z.infer<typeof clientSchema>;
 
 export type ClientCreate = z.infer<typeof clientCreateSchema>;
