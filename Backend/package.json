@@ -2,7 +2,6 @@
   "name": "backend",
   "version": "1.0.0",
   "scripts": {
-    "clean": "rm -rf dist",
     "build": "tsc",
     "start": "ts-node dist/server.ts",
     "dev": "ts-node-dev --rs --cls --ignore-watch node_modules src/server.ts",

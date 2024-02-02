@@ -10,4 +10,4 @@ echo "Construindo o projeto..."
 npm run build
 
 echo "Aplicando migrações..."
-npm run typeorm migration:run -d dist/data-source
+npm run typeorm-ts-node-esm migration:run
