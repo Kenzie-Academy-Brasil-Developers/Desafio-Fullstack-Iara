@@ -4,7 +4,7 @@
   "scripts": {
     "clean": "rm -rf dist",
     "build": "tsc",
-    "start": "ts-node dist/server.ts",
+    "start": "ts-node dist/server.js",
     "dev": "ts-node-dev --rs --cls --ignore-watch node_modules src/server.ts",
     "typeorm": "npx typeorm-ts-node-esm migration:generate src/migrations/InitialMigration -d src/data-source.ts",
     "typeorm-ts-node-esm": "typeorm-ts-node-esm"
