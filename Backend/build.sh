@@ -1,8 +1,13 @@
-// build.sh
+# build.sh
 #!/usr/bin/env bash
 # exit on error
 set -o errexit
 
-yarn
-yarn build
-yarn typeorm migration:run -d dist/data-source
+echo "Instalando dependências..."
+npm install
+
+echo "Construindo o projeto..."
+npm run build
+
+echo "Aplicando migrações..."
+npm run typeorm migration:run -d dist/data-source
