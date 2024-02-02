@@ -13,10 +13,10 @@ clientRouter.post("/",
     createClientController
     );
 
+    
+clientRouter.get("/", readAllClientController);
+    
 clientRouter.use(verifyToken)
-
-// clientRouter.get("/", readAllClientController);
-
 clientRouter.get("/:id",  readClientByIdController );
 
 clientRouter.patch("/:id", 
