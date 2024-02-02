@@ -20,15 +20,16 @@ const settings = (): DataSourceOptions => {
 
     if (!dbUrl) throw new Error("Missing env var: 'DATABASE_URL'");
 
+
     return {
         type: 'postgres',
         url: dbUrl,
         logging: true,
         entities: [entitiesPath],
         migrations: [migrationPath],
-        ssl: {
+        ssl: process.env.ENVIRONMENT === "development" ? false: {         
             rejectUnauthorized: false
-        }
+        } 
     };
 };
 
