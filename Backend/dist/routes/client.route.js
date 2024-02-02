@@ -1,0 +1,16 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.clientRouter = void 0;
+const express_1 = require("express");
+const globais_middleware_1 = require("../middlewares/globais.middleware");
+const client_schema_1 = require("../schemas/client.schema");
+const client_middleware_1 = require("../middlewares/client.middleware");
+const client_controller_1 = require("../controllers/client.controller");
+const verifyPermission_middleware_1 = require("../middlewares/verifyPermission.middleware");
+exports.clientRouter = (0, express_1.Router)();
+exports.clientRouter.post("/", (0, globais_middleware_1.validateBody)(client_schema_1.clientCreateSchema), client_middleware_1.verifyUniqueClientEmail, client_controller_1.createClientController);
+exports.clientRouter.use(globais_middleware_1.verifyToken);
+// clientRouter.get("/", readAllClientController);
+exports.clientRouter.get("/:id", client_controller_1.readClientByIdController);
+exports.clientRouter.patch("/:id", (0, globais_middleware_1.validateBody)(client_schema_1.clientUpdateSchema), verifyPermission_middleware_1.verifyPermissions, client_controller_1.updateClientController);
+exports.clientRouter.delete("/:id", verifyPermission_middleware_1.verifyPermissions, client_controller_1.deleteClientController);
